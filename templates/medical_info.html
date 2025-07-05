@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Enter Medical Info{% endblock %}
+
+{% block content %}
+    <h2>Enter Your Medical Information</h2>
+    <form method="POST" action="/medical_info">
+        <label for="trestbps">Resting Blood Pressure (mm Hg):</label><br>
+        <input type="number" id="trestbps" name="trestbps" required><br>
+
+        <label for="chol">Serum Cholesterol (mg/dl):</label><br>
+        <input type="number" id="chol" name="chol" required><br>
+
+        <label for="heartrate">Maximum Heart Rate Achieved:</label><br>
+        <input type="number" id="heartrate" name="heartrate" required><br>
+
+        <label for="smoker">Are you a smoker?</label><br>
+        <select name="smoker" id="smoker" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <button type="submit">submit and Get Result</button>
+    </form>
+{% endblock %}

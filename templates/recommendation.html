@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Health Recommendations{% endblock %}
+
+{% block content %}
+
+<body class="recommendation-page">
+    <div class="container">
+        <h1>Personalized Heart Health Recommendations</h1>
+        <p class="summary">{{ recommendations.summary }}</p>
+
+        <div class="collapsible">Diet Plan</div>
+<div class="content">
+    <ul>
+        {% for item in recommendations.diet %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+        <div class="collapsible">Exercise Plan</div>
+        <div class="content">
+            <ul>
+                {% for item in recommendations.exercise %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="collapsible">Daily Routine</div>
+        <div class="content">
+            <ul>
+                {% for item in recommendations.routine %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if recommendations.specific %}
+        <div class="collapsible">Specific Tips</div>
+        <div class="content">
+            <ul>
+                {% for item in recommendations.specific %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="back-button">
+            <a href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- <a href="{{ url_for('home') }}"><button>Back to Home</button></a> -->
+
+{% endblock %}

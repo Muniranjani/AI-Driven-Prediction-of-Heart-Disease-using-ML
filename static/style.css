@@ -1,0 +1,478 @@
+@keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInTitle {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 70px;
+      font-family: 'poppins', sans-serif;
+      background: linear-gradient(-45deg, #8a3367, #23d6be, #546cd6, #4cc9f0);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #181818;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 0 0 16px 16px;
+      padding: 10px 30px;
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 16px;
+      border-radius: 10px;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #4cc9f0;
+      box-shadow: 0 0 10px #4cc9f0;
+    }
+
+    .container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 30px;
+  padding: 100px 80px; /* Increased size */
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+  max-width: 800px; /* Increased width */
+  width: 95%;
+  margin: 120px auto;
+  animation: fadeIn 1.5s ease-out;
+}
+.welcome-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0b0b0b;
+  margin-bottom: 40px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: 
+    typing 3.5s steps(40, end) forwards,
+    blink 0.75s step-end infinite;
+  text-shadow: 0 0 15px #4cc9f0;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #030303;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease;
+}
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px; bottom: -4px;
+      z-index: -1;
+      background: linear-gradient(45deg, #d7d6dc, #69cbd7, #0d48d3);
+      background-size: 600% 600%;
+      border-radius: 30px;
+      animation: glowBorder 12s ease infinite;
+      filter: blur(20px);
+    }
+
+    h1 {
+      color: #181818;
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      animation: fadeInTitle 2s ease-out;
+      text-shadow: 0 0 15px #4cc9f0;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #110f0f;
+      margin-bottom: 40px;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #fff;
+      width: 0;
+      animation:
+        typing 3s steps(40, end) forwards,
+        blink 0.75s step-end infinite;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border-color: #030303;
+      border-style: dashed;
+      border-width: 10px;
+      border: #030303;
+      /* border-color: #b64747; */
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: #1d1a1a;
+      outline: none;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      box-shadow: 0 0 10px #4cc9f0, 0 0 20px #3a0ca3;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    button {
+      background: linear-gradient(to right, #3a0ca3, #4cc9f0);
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      color: #faf3f3;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(76, 201, 240, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Container styling */
+.recommendation-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 40px 30px;
+  max-width: 700px;
+  margin: 50px auto;
+  box-shadow: 0 0 40px rgba(76, 201, 240, 0.5);
+  color: #1f1d1d;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Headings as clickable tabs */
+.recommendation-tab {
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #4cc9f0, #3a0ca3);
+  border-radius: 15px;
+  box-shadow: 0 0 15px #3a0ca3;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommendation-tab:hover,
+.recommendation-tab.active {
+  background: linear-gradient(90deg, #3a0ca3, #4cc9f0);
+  box-shadow: 0 0 25px #4cc9f0;
+}
+
+/* Arrow icon */
+.recommendation-tab::after {
+  content: '▼';
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.recommendation-tab.active::after {
+  transform: rotate(180deg);
+}
+
+/* Content sections hidden by default */
+.recommendation-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.3s ease;
+  padding: 0 20px;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 15px 15px;
+  box-shadow: inset 0 0 10px rgba(76, 201, 240, 0.3);
+}
+
+/* Show content when active */
+.recommendation-content.active {
+  max-height: 1000px; /* large enough for content */
+  padding: 15px 20px;
+}
+
+/* Lists inside content */
+.recommendation-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.recommendation-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Summary styling */
+.summary-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #1f1f1f;
+  text-align: center;
+  text-shadow: 0 0 8px #4cc9f0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .recommendation-container {
+    padding: 30px 20px;
+  }
+
+  .recommendation-tab {
+    font-size: 1.2rem;
+  }
+
+  .recommendation-content {
+    font-size: 1rem;
+  }
+}
+
+.header-text {
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    .collapsible {
+      background: linear-gradient(90deg, #4ac2ff, #1a0fa3);
+      border-radius: 12px;
+      color: rgb(237, 232, 232);
+      cursor: pointer;
+      padding: 15px 20px;
+      margin: 12px 0;
+      font-weight: bold;
+      font-size: 18px;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .collapsible:after {
+      content: "▼";
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+    .collapsible.active:after {
+      transform: rotate(-180deg);
+    }
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 0 20px;
+      color: #181717;
+      font-size: 16px;
+      transition: max-height 0.35s ease;
+      text-align: left;
+    }
+    .content.show {
+      padding: 15px 20px;
+      max-height: 500px;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    a.back-home {
+      display: inline-block;
+      margin-top: 30px;
+      background: linear-gradient(90deg, #1a0fa3, #4ac2ff);
+      padding: 10px 25px;
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #4ac2ff;
+      transition: background 0.3s ease;
+    }
+    a.back-home:hover {
+      background: linear-gradient(90deg, #4ac2ff, #1a0fa3);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #4cc9f0, 0 0 60px #3a0ca3;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 8px 12px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+   .collapsible {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            cursor: pointer;
+            padding: 14px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background: linear-gradient(to right, #00f2fe, #4facfe);
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 10px 10px;
+            padding: 0 20px;
+            margin-bottom: 10px;
+        }
+
+        .content.show {
+            padding: 15px 20px;
+            max-height: 500px;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+.recommendation-page .collapsible {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    cursor: pointer;
+    padding: 14px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+.recommendation-page .collapsible:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+}
+
+.recommendation-page .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 10px 10px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.recommendation-page .content.show {
+    padding: 15px 20px;
+    max-height: 500px;
+}
+
+.recommendation-page .home-button {
+    margin-top: 20px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
